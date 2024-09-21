@@ -1,0 +1,6 @@
+@UESAN.StoreDB_HostAddress = http://localhost:5172
+
+GET {{UESAN.StoreDB_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
