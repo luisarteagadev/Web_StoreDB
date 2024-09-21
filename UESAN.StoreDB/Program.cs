@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using UESAN.StoreDB.DOMAIN.Core.Interfaces;
 using UESAN.StoreDB.DOMAIN.Infrastrcture.Data;
+using UESAN.StoreDB.DOMAIN.Infrastrcture.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ var cnx = _config.GetConnectionString("DevConnection");
 builder.Services
     .AddDbContext<StoreDbContext>
     (options => options.UseSqlServer(cnx));
+//REGISTRAR INTERFACES EN EL MIDLWARE
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

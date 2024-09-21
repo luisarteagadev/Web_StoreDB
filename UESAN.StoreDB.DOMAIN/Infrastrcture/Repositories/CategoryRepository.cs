@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UESAN.StoreDB.DOMAIN.Core.Interfaces;
 using UESAN.StoreDB.DOMAIN.Infrastrcture.Data;
 
 namespace UESAN.StoreDB.DOMAIN.Infrastrcture.Repositories
 {
-    public class CategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
 
         private readonly StoreDbContext _dbContext;
